@@ -3,16 +3,26 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const ProductsRouter = require("./routers/product");
+const cors = require("cors");
 require("dotenv/config");
 const PORT = process.env.PORT;
 
 // Middlewares
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
+app.use(cors());
+
+// Routes
+const ProductsRoutes = require("./routers/product.js");
+const UsersRoutes = require("./routers/users.js");
+const OrdersRoutes = require("./routers/orders.js");
+const CategoriesRoutes = require("./routers/categories.js");
 
 // Routers
-app.use("/product", ProductsRouter);
+app.use("/api/product", ProductsRoutes);
+app.use("/api/user", UsersRoutes);
+app.use("/api/order", OrdersRoutes);
+app.use("/api/categories", CategoriesRoutes);
 
 mongoose
   .connect("mongodb://localhost:27017/myEshop", {
