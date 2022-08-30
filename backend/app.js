@@ -7,10 +7,12 @@ const cors = require("cors");
 require("dotenv/config");
 const PORT = process.env.PORT;
 
+app.use(cors());
+app.options("*", cors());
+
 // Middlewares
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
-app.use(cors());
 
 // Routes
 const ProductsRoutes = require("./routers/product.js");
@@ -22,7 +24,7 @@ const CategoriesRoutes = require("./routers/categories.js");
 app.use("/api/product", ProductsRoutes);
 app.use("/api/user", UsersRoutes);
 app.use("/api/order", OrdersRoutes);
-app.use("/api/categories", CategoriesRoutes);
+app.use("/api/category", CategoriesRoutes);
 
 mongoose
   .connect("mongodb://localhost:27017/myEshop", {
