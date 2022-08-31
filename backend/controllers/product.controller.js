@@ -43,13 +43,11 @@ module.exports.createProduct = expressAsyncHandler(async (req, res) => {
 module.exports.getProductList = expressAsyncHandler(async (req, res) => {
   // localhost:3000/api/v1/products?categories=2345643,234234
 
-  let filter = [];
+  let filter = {};
   if (req.query.categories) {
-    filter = req.query.categories.split(",");
+    filter = { category: req.query.categories.split(",") };
   }
-  productList = await ProductModel.find({ category: filter }).populate(
-    "category"
-  );
+  productList = await ProductModel.find(filter).populate("category");
   if (!productList) return res.status(500).json({ success: false });
 
   res.send(productList);
