@@ -1,5 +1,6 @@
 const expressAsyncHandler = require("express-async-handler");
 const CategoryModel = require("../models/categories");
+const mongoose = require("mongoose");
 
 module.exports.getCategoryList = expressAsyncHandler(async (req, res) => {
   const categoryList = await CategoryModel.find();
@@ -61,6 +62,9 @@ module.exports.deleteCategory = expressAsyncHandler(async (req, res) => {
 
 module.exports.updateCategory = expressAsyncHandler(async (req, res) => {
   let id = req.params.id;
+  if (!mongoose.isValidObjectId(id)) {
+    return res.status(400).send("Invalid category Id");
+  }
   const { name, icon, color } = req.body;
   const category = await CategoryModel.findByIdAndUpdate(
     id,
