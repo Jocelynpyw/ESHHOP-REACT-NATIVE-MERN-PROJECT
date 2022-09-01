@@ -1,6 +1,7 @@
 const expressAsyncHandler = require("express-async-handler");
 const UserModel = require("../models/users");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const mongoose = require("mongoose");
 
@@ -62,13 +63,24 @@ module.exports.getOneUser = expressAsyncHandler(async (req, res) => {
 
 module.exports.loginUser = expressAsyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  const secret = process.env.secret;
   const user = await UserModel.findOne({ email: email });
 
   if (!user) {
     return res.status(400).send("the User not found");
   }
   if (user && bcrypt.compareSync(password, user.password)) {
-    res.status(200).send("User Authenticated");
+    const token = jwt.sign(
+      {
+        userId: user.id,
+      },
+      secret,
+      { expiresIn: "1d" }
+    );
+    res.status(200).json({
+      user: user.email,
+      token: token,
+    });
   } else {
     res.status(400).send("Password is wrong");
   }
