@@ -72,7 +72,7 @@ module.exports.loginUser = expressAsyncHandler(async (req, res) => {
   if (user && bcrypt.compareSync(password, user.password)) {
     const token = jwt.sign(
       {
-        userId: user.id,
+        user: user,
       },
       secret,
       { expiresIn: "1d" }

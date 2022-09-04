@@ -6,16 +6,28 @@ const morgan = require("morgan");
 const cors = require("cors");
 require("dotenv/config");
 const authJwt = require("./helpers/jwt");
+var { expressjwt: jwt } = require("express-jwt");
 
 const PORT = process.env.PORT;
-
+const secret = process.env.secret;
 app.use(cors());
 app.options("*", cors());
 
 // Middlewares
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
-// app.use(authJwt);
+app.use(authJwt());
+app.use(function (err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    return res.status(401).json({ message: "The user is not authorized" });
+  }
+  if (err.name === "ValidationError") {
+    return res.status(401).json({ message: err });
+  }
+
+  return res.status(500).json(err);
+  next();
+});
 
 // Routes
 const ProductsRoutes = require("./routers/product.js");
