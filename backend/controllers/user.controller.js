@@ -39,6 +39,7 @@ module.exports.createUser = expressAsyncHandler(async (req, res) => {
 
 module.exports.getusersList = expressAsyncHandler(async (req, res) => {
   const userList = await UserModel.find().select("-password");
+  console.log(`Le usert list est ${userList}`);
 
   if (!userList) return res.status(500).json({ success: false });
 
@@ -61,6 +62,17 @@ module.exports.getOneUser = expressAsyncHandler(async (req, res) => {
   res.status(200).send(user);
 });
 
+module.exports.getUserCount = expressAsyncHandler(async (req, res) => {
+  const userCount = await UserModel.countDocuments();
+  console.log(`je suis la et le usercount`);
+  if (!userCount) {
+    res.status(500).json({ success: false });
+  }
+  res.send({
+    userCount: userCount,
+  });
+});
+
 module.exports.loginUser = expressAsyncHandler(async (req, res) => {
   const { email, password } = req.body;
   const secret = process.env.secret;
@@ -72,7 +84,8 @@ module.exports.loginUser = expressAsyncHandler(async (req, res) => {
   if (user && bcrypt.compareSync(password, user.password)) {
     const token = jwt.sign(
       {
-        user: user,
+        userId: user.id,
+        isAdmin: user.isAdmin,
       },
       secret,
       { expiresIn: "1d" }
@@ -84,4 +97,38 @@ module.exports.loginUser = expressAsyncHandler(async (req, res) => {
   } else {
     res.status(400).send("Password is wrong");
   }
+});
+
+module.exports.deleteUser = expressAsyncHandler(async (req, res) => {
+  let id = req.params.id;
+  if (!mongoose.isValidObjectId(id)) {
+    return res.status(400).send("user  not exist");
+  }
+  const user = await UserModel.findByIdAndDelete(id);
+
+  if (!user)
+    return res.status(404).json({ success: false, message: "User not found" });
+
+  return res.status(200).json({ succes: true, message: "User deleted" });
+
+  // UserModel.findOneAndRemove(id)
+  //   .then((user) => {
+  //     if (user) {
+  //       return res.status(200).json({
+  //         success: true,
+  //         message: "The User is deleted",
+  //       });
+  //     } else {
+  //       return res.status(404).json({
+  //         success: false,
+  //         message: "User not found",
+  //       });
+  //     }
+  //   })
+  //   .catch((err) => {
+  //     return res.status(400).json({
+  //       success: false,
+  //       error: err,
+  //     });
+  //   });
 });
