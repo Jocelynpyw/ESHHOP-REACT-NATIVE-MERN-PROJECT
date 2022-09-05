@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const orderController = require("../controllers/order.controller");
 
-router.get("/", async (req, res) => {
-  res.send("Je suis dans l'api des Orders ");
-});
+router.get("/", orderController.getOrdersList);
+router.post("/", orderController.createOrder);
 
 module.exports = router;

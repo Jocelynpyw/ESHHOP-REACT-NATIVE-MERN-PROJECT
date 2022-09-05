@@ -39,7 +39,6 @@ module.exports.createUser = expressAsyncHandler(async (req, res) => {
 
 module.exports.getusersList = expressAsyncHandler(async (req, res) => {
   const userList = await UserModel.find().select("-password");
-  console.log(`Le usert list est ${userList}`);
 
   if (!userList) return res.status(500).json({ success: false });
 
@@ -110,25 +109,4 @@ module.exports.deleteUser = expressAsyncHandler(async (req, res) => {
     return res.status(404).json({ success: false, message: "User not found" });
 
   return res.status(200).json({ succes: true, message: "User deleted" });
-
-  // UserModel.findOneAndRemove(id)
-  //   .then((user) => {
-  //     if (user) {
-  //       return res.status(200).json({
-  //         success: true,
-  //         message: "The User is deleted",
-  //       });
-  //     } else {
-  //       return res.status(404).json({
-  //         success: false,
-  //         message: "User not found",
-  //       });
-  //     }
-  //   })
-  //   .catch((err) => {
-  //     return res.status(400).json({
-  //       success: false,
-  //       error: err,
-  //     });
-  //   });
 });
