@@ -2,11 +2,22 @@ const expressAsyncHandler = require("express-async-handler");
 const CategoryModel = require("../models/categories");
 const ProductModel = require("../models/product");
 const mongoose = require("mongoose");
+const multer = require("multer");
+
+// Multer conntrol
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/uploads");
+  },
+  filename: function (req, file, cb) {
+    const fileName = file.originalname.split(" ").join("-");
+    cb(null, fileName + "-" + Date.now());
+  },
+});
 
 module.exports.createProduct = expressAsyncHandler(async (req, res) => {
   const {
     name,
-    image,
     countInStock,
     description,
     richDescription,
@@ -17,13 +28,16 @@ module.exports.createProduct = expressAsyncHandler(async (req, res) => {
     numReviews,
     isFeature,
   } = req.body;
-
+  console.log("Je suis dans le  create Product");
   const categoryId = await CategoryModel.findById(category);
   if (!categoryId) return res.status(400).send("Invalid Category");
+  const fileName = req.body.image;
+  console.log(req.body);
+  const basePath = `${req.protocol}://${req.get("host")}/public/upload/`;
 
   product = new ProductModel({
     name: name,
-    image: image,
+    image: `${basePath}${fileName}`,
     countInStock: countInStock,
     description: description,
     richDescription: richDescription,
