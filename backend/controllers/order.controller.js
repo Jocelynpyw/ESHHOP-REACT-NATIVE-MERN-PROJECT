@@ -92,6 +92,18 @@ module.exports.createOrder = expressAsyncHandler(async (req, res) => {
   res.send(order);
 });
 
+module.exports.getTotalSales = expressAsyncHandler(async (req, res) => {
+  const totalSales = await OrderModel.aggregate([
+    { $group: { _id: null, totalSales: { $sum: "$totalPrice" } } },
+  ]);
+
+  if (!totalSales) {
+    return res.status(400).send("The Order sales cannot be generated");
+  }
+
+  res.send({ totalSales: totalSales.pop().totalSales });
+});
+
 module.exports.updateStatusOrder = expressAsyncHandler(async (req, res) => {
   let id = req.params.id;
   let status = req.body.status;
@@ -137,4 +149,15 @@ module.exports.deleteOrder = expressAsyncHandler(async (req, res) => {
         error: err,
       });
     });
+});
+
+module.exports.getOrdersCount = expressAsyncHandler(async (req, res) => {
+  const orderCount = await OrderModel.countDocuments();
+
+  if (!orderCount) {
+    res.status(500).json({ success: false });
+  }
+  res.send({
+    orderCount: orderCount,
+  });
 });
