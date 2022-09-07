@@ -58,6 +58,20 @@ module.exports.createOrder = expressAsyncHandler(async (req, res) => {
 
   const orderItemsIdsResolved = await orderItemsIds;
 
+  const totalPrices = await Promise.all(
+    orderItemsIdsResolved.map(async (orderItemId) => {
+      const orderItem = await OrderItemModel.findById(orderItemId).populate(
+        "product",
+        "price"
+      );
+
+      const totalPrice = orderItem.product.price * orderItem.quantity;
+      return totalPrice;
+    })
+  );
+
+  const totalFiinalPrice = totalPrices.reduce((a, b) => a + b);
+
   let order = new OrderModel({
     orderItems: orderItemsIdsResolved,
     shippingAdress1: shippingAdress1,
@@ -67,7 +81,7 @@ module.exports.createOrder = expressAsyncHandler(async (req, res) => {
     city: city,
     zip: zip,
     status: status,
-    totalPrice: totalPrice,
+    totalPrice: totalFiinalPrice,
     user: user,
   });
 
