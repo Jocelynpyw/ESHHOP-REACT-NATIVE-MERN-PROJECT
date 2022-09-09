@@ -161,3 +161,17 @@ module.exports.getOrdersCount = expressAsyncHandler(async (req, res) => {
     orderCount: orderCount,
   });
 });
+
+module.exports.getOrderOfUser = expressAsyncHandler(async (req, res) => {
+  // .Populate fait une jointure entre les differentes tables , ici grace a l'id du User jee peux afficher ses informations dans mon Order
+  const userOrderList = await OrderModel.find({ user: req.params.userid })
+    .populate({
+      path: "orderItems",
+      populate: { path: "product", populate: { path: "category" } },
+    })
+    .sort({ dateOrdered: -1 });
+  // Juste la haut je ne veux populate que le nom du user
+  if (!userOrderList) return res.status(500).json({ success: false });
+
+  res.send(userOrderList);
+});
