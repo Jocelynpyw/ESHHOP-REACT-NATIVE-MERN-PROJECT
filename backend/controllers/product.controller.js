@@ -6,13 +6,24 @@ const multer = require("multer");
 // Je suis a 4h 41 min
 
 // Multer conntrol
-const storage = multer.diskStorage({
+const FILE_TYPE_MAP = {
+  "image/png": "png",
+  "image/jpg": "jpg",
+  "image/jpeg": "jpeg",
+};
+module.exports.storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "public/uploads");
+    const isValid = FILE_TYPE_MAP[file.mimetype];
+    let uploadError = new Error("invalid image type");
+    if (isValid) {
+      uploadError = null;
+    }
+    cb(uploadError, "public/uploads");
   },
   filename: function (req, file, cb) {
     const fileName = file.originalname.split(" ").join("-");
-    cb(null, fileName + "-" + Date.now());
+    const extension = FILE_TYPE_MAP[file.mimetype];
+    cb(null, `${fileName}-${Date.now()}.${extension}`);
   },
 });
 
@@ -29,12 +40,12 @@ module.exports.createProduct = expressAsyncHandler(async (req, res) => {
     numReviews,
     isFeature,
   } = req.body;
-  console.log("Je suis dans le  create Product");
+
   const categoryId = await CategoryModel.findById(category);
   if (!categoryId) return res.status(400).send("Invalid Category");
-  const fileName = req.body.image;
-  console.log(req.body);
-  const basePath = `${req.protocol}://${req.get("host")}/public/upload/`;
+  const fileName = req.file.filename.split(" ").join("-");
+  // console.log(req.body);
+  const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
 
   product = new ProductModel({
     name: name,
