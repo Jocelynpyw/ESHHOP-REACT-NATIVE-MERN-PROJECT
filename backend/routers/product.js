@@ -16,5 +16,10 @@ router.get("/:id", productController.getOneProduct);
 router.get("/get/count", productController.getProductCount);
 router.get("/get/featured/:count", productController.getFeaturedProduct);
 router.delete("/:id", productController.deleteProduct);
+router.put(
+  "/gallery-images/:id",
+  uploadOptions.array("images", 6),
+  productController.uplaodProductGalleryImages
+);
 
 module.exports = router;

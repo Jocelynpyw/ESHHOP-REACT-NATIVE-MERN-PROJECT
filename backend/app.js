@@ -39,6 +39,7 @@ const CategoriesRoutes = require("./routers/categories.js");
 app.use("/api/product", ProductsRoutes);
 app.use("/api/user", UsersRoutes);
 app.use("/api/order", OrdersRoutes);
+app.use("public/uploads", express.static(__dirname + "/public/uploads"));
 app.use("/api/category", CategoriesRoutes);
 
 mongoose

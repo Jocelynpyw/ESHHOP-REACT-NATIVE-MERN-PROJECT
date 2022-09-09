@@ -8,6 +8,7 @@ function authJwt() {
   }).unless({
     path: [
       // expression reguliere pour avoir toutes les routes qui se mettent sous la forme /api/product
+      { url: /\/api\/uploads(.*)/, methods: ["GET", "OPTIONS"] },
       { url: /\/api\/product(.*)/, methods: ["GET", "OPTIONS"] },
       { url: /\/api\/category(.*)/, methods: ["GET", "OPTIONS"] },
       "/api/user/login",

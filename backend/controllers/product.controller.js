@@ -43,8 +43,10 @@ module.exports.createProduct = expressAsyncHandler(async (req, res) => {
 
   const categoryId = await CategoryModel.findById(category);
   if (!categoryId) return res.status(400).send("Invalid Category");
+  const file = req.file;
+  if (!file) return res.status(400).send("No image in the request");
+
   const fileName = req.file.filename.split(" ").join("-");
-  // console.log(req.body);
   const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
 
   product = new ProductModel({
@@ -185,3 +187,38 @@ module.exports.getFeaturedProduct = expressAsyncHandler(async (req, res) => {
   }
   res.send(product);
 });
+
+module.exports.uplaodProductGalleryImages = expressAsyncHandler(
+  async (req, res) => {
+    let id = req.params.id;
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send("Invalid category Id");
+    }
+
+    const categoryId = await CategoryModel.findById(req.body.category);
+    if (!categoryId) return res.status(400).send("Invalid Category");
+
+    const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
+    let imagesPaths = [];
+    const files = req.files;
+    // const fileName = req.file.filename.split(" ").join("-");
+
+    if (files) {
+      files.map((file) => {
+        imagesPaths.push(`${basePath}${file.filename}`);
+      });
+    }
+
+    const product = await ProductModel.findByIdAndUpdate(
+      id,
+      {
+        images: imagesPaths,
+      },
+      { new: true }
+    );
+    if (!product)
+      return res.status.apply(400).send("the product cannot be created !");
+
+    res.send(product);
+  }
+);
