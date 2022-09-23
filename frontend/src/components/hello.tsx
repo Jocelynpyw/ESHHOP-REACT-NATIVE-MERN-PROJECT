@@ -1,19 +1,19 @@
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import Hello from './src/components/hello';
-// import Hello from ';
 
-const App = () => {
+const Hello = () => {
   return (
     <View style={styles.container}>
-      <Hello />
+      <Text>Mael c'est le laid bebe de la terre qui dit mieux ? </Text>
     </View>
   );
 };
+
+export default Hello;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
   },
 });
-export default App;
