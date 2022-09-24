@@ -7,7 +7,6 @@ import {
   View,
 } from 'react-native';
 import React, {FunctionComponent} from 'react';
-import {colors} from '../../utils/colors';
 
 interface Props {
   item: {name: string; brand: string; id: any};
