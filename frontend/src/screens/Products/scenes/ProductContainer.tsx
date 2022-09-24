@@ -1,19 +1,19 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const Hello = () => {
+const ProductContainer = () => {
   return (
     <View style={styles.container}>
-      <Text>Mael c'est le laid bebe de la terre qui dit mieux ? </Text>
+      <Text>I am in the ProductContainer</Text>
     </View>
   );
 };
 
-export default Hello;
+export default ProductContainer;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
   },
 });

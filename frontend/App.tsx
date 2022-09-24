@@ -1,12 +1,11 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import Hello from './src/components/hello';
-// import Hello from ';
+import ProductContainer from './src/screens/Products/scenes/ProductContainer';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Hello />
+      <ProductContainer />
     </View>
   );
 };

@@ -1,0 +1,164 @@
+[
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wderr445"
+    },
+    "image": "should be some path",
+    "brand": "IKEA",
+    "price": 350,
+    "rating": 5,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "Garden Chair",
+    "description": "The most hard Garden Chair ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "Canon t-shirt",
+    "price": 450,
+    "rating": 3,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "Canon Maillot",
+    "description": "The most best Canon Maillot ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 2,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "2fede332wdde23443wdeer445"
+    },
+    "image": "should be some path",
+    "brand": "ps3",
+    "price": 250,
+    "rating": 1,
+    "numReviews": 0,
+    "isFeatured": true,
+    "name": "FIFA  20",
+    "description": "The most hard FIFA ever",
+    "category": {
+      "$iod": "5f15cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 25,
+    "__v": 0
+  }
+]
