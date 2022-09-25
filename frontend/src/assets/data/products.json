@@ -3,13 +3,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  23",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"
@@ -21,7 +21,7 @@
     "_id": {
       "$oid": "2fede332wdde23443wderr445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "IKEA",
     "price": 350,
     "rating": 5,
@@ -39,7 +39,7 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "Canon t-shirt",
     "price": 450,
     "rating": 3,
@@ -57,13 +57,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  4",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"
@@ -75,13 +75,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  10",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"
@@ -93,13 +93,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  12",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"
@@ -111,13 +111,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
-    "brand": "ps3",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
+    "brand": "ps5",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  202",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"
@@ -129,13 +129,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  22",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"
@@ -147,13 +147,13 @@
     "_id": {
       "$oid": "2fede332wdde23443wdeer445"
     },
-    "image": "should be some path",
+    "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
     "rating": 1,
     "numReviews": 0,
     "isFeatured": true,
-    "name": "FIFA  20",
+    "name": "FIFA  100",
     "description": "The most hard FIFA ever",
     "category": {
       "$iod": "5f15cdcb4a6642bddc0fe9"

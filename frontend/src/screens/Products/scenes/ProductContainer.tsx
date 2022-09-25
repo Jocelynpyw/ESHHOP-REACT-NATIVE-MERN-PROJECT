@@ -29,6 +29,6 @@ export default ProductContainer;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.app.white,
+    backgroundColor: colors.app.grey,
   },
 });
