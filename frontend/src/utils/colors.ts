@@ -37,6 +37,7 @@ export const colors = {
     lightYellow: '#FBCB22',
     backgrounfGray: '#F2F2F2',
     borderInputColor: '#CFCFD5',
+    red: 'red',
   },
   text: {
     primary: '#000000',

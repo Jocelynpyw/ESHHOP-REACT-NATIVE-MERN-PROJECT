@@ -2,6 +2,7 @@ import {FlatList, StyleSheet, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import ProductCard from '../../../components/ProductItem';
 import {colors} from '../../../utils/colors';
+import Header from '../../../components/header';
 
 const data = require('../../../assets/data/products.json');
 
@@ -16,6 +17,7 @@ const ProductContainer = () => {
 
   return (
     <View style={styles.container}>
+      <Header logo />
       <FlatList
         data={products}
         renderItem={({item}) => <ProductCard key={item.id} item={item} />}

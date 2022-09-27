@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import ProductContainer from './src/screens/Products/scenes/ProductContainer';
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ProductContainer />
-    </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
