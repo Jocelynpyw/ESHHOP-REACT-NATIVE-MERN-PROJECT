@@ -8,7 +8,7 @@ interface Props {
   logoCenter?: boolean;
 }
 
-const Header: FunctionComponent<Props> = (props: Props) => {
+const EshopHeader: FunctionComponent<Props> = (props: Props) => {
   return (
     <SafeAreaView style={styles.container}>
       {props.logo && (
@@ -18,7 +18,7 @@ const Header: FunctionComponent<Props> = (props: Props) => {
   );
 };
 
-export default Header;
+export default EshopHeader;
 
 const styles = StyleSheet.create({
   container: {
