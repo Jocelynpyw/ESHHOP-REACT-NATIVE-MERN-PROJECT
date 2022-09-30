@@ -17,7 +17,7 @@ const ProductContainer = () => {
 
   return (
     <View style={styles.container}>
-      <EshopHeader logo />
+      <EshopHeader logo back />
       <FlatList
         data={products}
         renderItem={({item}) => <ProductCard key={item.id} item={item} />}
