@@ -1,5 +1,5 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useState} from 'react';
 import {logo} from '../../utils/images';
 import {colors} from '../../utils/colors';
 import EsInput from '../input';
@@ -9,9 +9,12 @@ interface Props {
   logo?: boolean;
   logoCenter?: boolean;
   back?: boolean;
+  text?: String;
+  getSearchText?: (text: string) => void;
 }
-
 const EshopHeader: FunctionComponent<Props> = (props: Props) => {
+  const [search, setSearch] = useState<string>();
+
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -25,7 +28,18 @@ const EshopHeader: FunctionComponent<Props> = (props: Props) => {
         )}
       </View>
 
-      <EsInput icon iconName="search" />
+      <EsInput
+        icon
+        iconName="search"
+        placeholder="search..."
+        value={search}
+        onChangeText={(name, text) => {
+          setSearch(text);
+          if (props.getSearchText) {
+            props.getSearchText(text);
+          }
+        }}
+      />
     </View>
   );
 };

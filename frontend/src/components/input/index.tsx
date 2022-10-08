@@ -8,9 +8,14 @@ interface Iinput {
   stylesInput?: ViewStyle;
   icon?: boolean;
   iconName?: string;
+  placeholder?: string;
+  onChangeText?(name: string, text: string): void;
+  text?: string;
+  name?: string;
 }
 
 const EsInput: FunctionComponent<Iinput> = (props: Iinput) => {
+  const {onChangeText = () => {}, name = ''} = props;
   return (
     <View style={[styles.container, props.styless]}>
       <View style={[styles.defaultInputContainer, props.stylesInput]}>
@@ -18,14 +23,19 @@ const EsInput: FunctionComponent<Iinput> = (props: Iinput) => {
           <Pressable>
             <FontAwesome5
               name={props.iconName}
-              color="black"
+              color="grey"
               size={20}
               style={styles.iconStyle}
             />
           </Pressable>
         )}
 
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          placeholder={props.placeholder}
+          onChangeText={text => onChangeText(name, text)}
+          // onChangeText={text => onChangeText(text)}
+        />
       </View>
     </View>
   );
@@ -47,7 +57,6 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: 'white',
-
     borderRadius: 10,
   },
   defaultInputContainer: {
@@ -59,13 +68,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-    // paddingLeft: 10,
     fontSize: 18,
-    // borderWidth: 1,
-    // border: 'none',
-    // borderBottomLeftRadius: 10,
-    // borderBottomRightRadius: 10,
-    // borderTopLeftRadius: 10,
-    // borderTopRightRadius: 10,
   },
 });
