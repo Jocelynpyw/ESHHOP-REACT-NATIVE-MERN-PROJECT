@@ -1,6 +1,12 @@
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
-import ProductCard from '../../../components/ProductItem';
 import {emptySearch} from '../../../utils/images';
 import ProductSearchItem from '../../../components/ProductSearchItem';
 import {colors} from '../../../utils/colors';
@@ -41,6 +47,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     padding: 10,
     backgroundColor: colors.app.white,
+    width: Dimensions.get('screen').width,
   },
   nothingContainer: {
     alignContent: 'center',

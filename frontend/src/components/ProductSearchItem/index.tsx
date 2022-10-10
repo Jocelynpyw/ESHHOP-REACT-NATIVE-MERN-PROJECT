@@ -29,10 +29,13 @@ const ProductSearchItem: FunctionComponent<Props> = (props: Props) => {
             style={styles.image}
             resizeMode="contain"
             source={{
-              uri: props.item.image
-                ? props.item.image
-                : 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
+              uri: 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
             }}
+            // source={{
+            //   uri: props.item.image
+            //     ? props.item.image
+            //     : 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
+            // }}
           />
         </View>
         <View>

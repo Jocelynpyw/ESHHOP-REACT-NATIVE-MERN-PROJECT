@@ -4,18 +4,17 @@ import ProductCard from '../../../components/ProductItem';
 import {colors} from '../../../utils/colors';
 import EshopHeader from '../../../components/header';
 import ProductSearchContainer from './ProductSearchContainer';
+import SwiperComponent from '../../../components/Barner';
 
 const data = require('../../../assets/data/products.json');
 
 const ProductContainer = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [productFiltered, setProductFiltered] = useState<any[]>([]);
-  const [focus, setFocus] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<String>('');
   useEffect(() => {
     setProducts(data);
     setProductFiltered(data);
-    setFocus(false);
     return () => {
       setProducts([]);
     };
@@ -29,22 +28,31 @@ const ProductContainer = () => {
     );
   };
 
-  const getSearchText = data => {
-    setInputValue(data);
-    searchProduct(data);
+  const getSearchText = (dataSearch: string) => {
+    setInputValue(dataSearch);
+    searchProduct(dataSearch);
   };
 
   return (
     <View style={styles.container}>
       <EshopHeader logo back getSearchText={getSearchText} />
+
       {inputValue === '' ? (
-        <FlatList
-          data={products}
-          renderItem={({item}) => <ProductCard key={item.id} item={item} />}
-          keyExtractor={item => item.name}
-        />
+        <View style={styles.containerContent}>
+          <View style={styles.containerItem}>
+            <FlatList
+              ListHeaderComponent={() => <SwiperComponent />}
+              data={products}
+              renderItem={({item}) => <ProductCard key={item.id} item={item} />}
+              keyExtractor={item => item.name}
+              numColumns={2}
+            />
+          </View>
+        </View>
       ) : (
-        <ProductSearchContainer productFiltered={productFiltered} />
+        <View>
+          <ProductSearchContainer productFiltered={productFiltered} />
+        </View>
       )}
     </View>
   );
@@ -55,5 +63,19 @@ export default ProductContainer;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.app.grey,
+    alignItems: 'center',
+  },
+  containerContent: {
+    borderRadius: 20,
+    marginTop: 5,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  containerItem: {
+    // backgroundColor: 'lime',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
