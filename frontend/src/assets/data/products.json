@@ -12,7 +12,7 @@
     "name": "FIFA  23",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe9"
     },
     "countInStock": 25,
     "__v": 0
@@ -30,7 +30,7 @@
     "name": "Garden Chair",
     "description": "The most hard Garden Chair ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe8"
     },
     "countInStock": 5,
     "__v": 0
@@ -48,7 +48,7 @@
     "name": "Canon Maillot",
     "description": "The most best Canon Maillot ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe2"
     },
     "countInStock": 2,
     "__v": 0
@@ -66,14 +66,14 @@
     "name": "FIFA  4",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fex"
     },
     "countInStock": 25,
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
+      "$oid": "2fede332wdde23443wdeer442"
     },
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
@@ -84,7 +84,7 @@
     "name": "FIFA  10",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fex"
     },
     "countInStock": 25,
     "__v": 0
@@ -102,14 +102,14 @@
     "name": "FIFA  12",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe4"
     },
     "countInStock": 25,
     "__v": 0
   },
   {
     "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
+      "$oid": "2fede332wdde23443wdeer449"
     },
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps5",
@@ -120,7 +120,7 @@
     "name": "FIFA  202",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe9"
     },
     "countInStock": 25,
     "__v": 0
@@ -138,7 +138,7 @@
     "name": "FIFA  22",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe1"
     },
     "countInStock": 25,
     "__v": 0
@@ -156,7 +156,7 @@
     "name": "FIFA  100",
     "description": "The most hard FIFA ever",
     "category": {
-      "$iod": "5f15cdcb4a6642bddc0fe9"
+      "_id": "5f15cdcb4a6642bddc0fe9"
     },
     "countInStock": 25,
     "__v": 0

@@ -10,6 +10,7 @@ import React from 'react';
 import {emptySearch} from '../../../utils/images';
 import ProductSearchItem from '../../../components/ProductSearchItem';
 import {colors} from '../../../utils/colors';
+import EsEmpty from '../../../components/EmptyThings';
 
 const ProductSearchContainer = (props: any) => {
   const {productFiltered} = props;
@@ -25,14 +26,7 @@ const ProductSearchContainer = (props: any) => {
           keyExtractor={item => item.name}
         />
       ) : (
-        <View style={styles.nothingContainer}>
-          <Image
-            source={emptySearch}
-            resizeMode="contain"
-            style={styles.emptyImageStyle}
-          />
-          <Text>No thing available</Text>
-        </View>
+        <EsEmpty message="No thing available" />
       )}
       {/* <Text>ProductSearchContainer</Text> */}
     </View>
@@ -55,7 +49,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexGrow: 2,
     height: 400,
-    // backgroundColor: 'lime',
   },
   emptyImageStyle: {
     width: 200,

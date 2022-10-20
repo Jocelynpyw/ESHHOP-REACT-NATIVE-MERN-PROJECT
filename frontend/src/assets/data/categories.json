@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "5f15cdcb4a6642bddc0fe21",
+    "name": "All"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fe9",
+    "name": "Pantalon"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fe8",
+    "name": "Maillots"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fe2",
+    "name": "Electroniques"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fex",
+    "name": "Mecanique"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fe4",
+    "name": "Ecran"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fe1",
+    "name": "Robe"
+  },
+  {
+    "_id": "5f15cdcb4a6642bddc0fe0",
+    "name": "Noisettes"
+  }
+]
