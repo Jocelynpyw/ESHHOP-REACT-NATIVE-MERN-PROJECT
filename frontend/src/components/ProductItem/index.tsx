@@ -6,9 +6,11 @@ import {
   StyleSheet,
   Text,
   View,
+  Pressable,
 } from 'react-native';
 import React, {FunctionComponent} from 'react';
 import {colors} from '../../utils/colors';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   item: {
@@ -24,36 +26,42 @@ interface Props {
 var {width} = Dimensions.get('window');
 
 const ProductCard: FunctionComponent<Props> = (props: Props) => {
+  const navigation = useNavigation<any>();
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        resizeMode="contain"
-        source={{
-          uri: 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
-        }}
-        // source={{
-        //   uri: props.item.image
-        //     ? props.item.image
-        //     : 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
-        // }}
-      />
-      <View style={styles.card}>
-        <Text style={styles.title}>
-          {props.item.name.length > 15
-            ? props.item.name.substring(0, 15 - 3) + '...'
-            : props.item.name}
-        </Text>
-        <Text style={styles.price}>{props.item.price} XAF</Text>
-        {props.item.countInStock > 0 ? (
-          <View style={styles.viewButton}>
-            <Button title="Add" color={'green'} />
-          </View>
-        ) : (
-          <Text style={styles.unavailableText}>Currently Unavailable</Text>
-        )}
+    <Pressable
+      onPress={() =>
+        navigation.navigate('Product Details', {item: props.item})
+      }>
+      <View style={styles.container}>
+        <Image
+          style={styles.image}
+          resizeMode="contain"
+          source={{
+            uri: 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
+          }}
+          // source={{
+          //   uri: props.item.image
+          //     ? props.item.image
+          //     : 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
+          // }}
+        />
+        <View style={styles.card}>
+          <Text style={styles.title}>
+            {props.item.name.length > 15
+              ? props.item.name.substring(0, 15 - 3) + '...'
+              : props.item.name}
+          </Text>
+          <Text style={styles.price}>{props.item.price} XAF</Text>
+          {props.item.countInStock > 0 ? (
+            <View style={styles.viewButton}>
+              <Button title="Add" color={'green'} />
+            </View>
+          ) : (
+            <Text style={styles.unavailableText}>Currently Unavailable</Text>
+          )}
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

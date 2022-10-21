@@ -4,22 +4,27 @@ import {logo} from '../../utils/images';
 import {colors} from '../../utils/colors';
 import EsInput from '../input';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   logo?: boolean;
   logoCenter?: boolean;
+  searchBar?: boolean;
   back?: boolean;
   text?: String;
   getSearchText?: (text: string) => void;
 }
 const EshopHeader: FunctionComponent<Props> = (props: Props) => {
+  const navigation = useNavigation<any>();
   const [search, setSearch] = useState<string>();
 
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
         {props.back && (
-          <TouchableOpacity style={styles.btnBack}>
+          <TouchableOpacity
+            style={styles.btnBack}
+            onPress={() => navigation.goBack()}>
             <FontAwesome5 name="arrow-left" key={123} size={20} color="white" />
           </TouchableOpacity>
         )}
@@ -27,19 +32,20 @@ const EshopHeader: FunctionComponent<Props> = (props: Props) => {
           <Image source={logo} resizeMode="contain" style={styles.imageStyle} />
         )}
       </View>
-
-      <EsInput
-        icon
-        iconName="search"
-        placeholder="search..."
-        value={search}
-        onChangeText={(name, text) => {
-          setSearch(text);
-          if (props.getSearchText) {
-            props.getSearchText(text);
-          }
-        }}
-      />
+      {props.searchBar && (
+        <EsInput
+          icon
+          iconName="search"
+          placeholder="search..."
+          value={search}
+          onChangeText={(name, text) => {
+            setSearch(text);
+            if (props.getSearchText) {
+              props.getSearchText(text);
+            }
+          }}
+        />
+      )}
     </View>
   );
 };
@@ -50,6 +56,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     alignItems: 'center',
+    minHeight: 50,
     padding: 15,
     backgroundColor: colors.app.red,
   },

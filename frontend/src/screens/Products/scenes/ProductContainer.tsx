@@ -61,7 +61,7 @@ const ProductContainer = () => {
 
   return (
     <View style={styles.container}>
-      <EshopHeader logo back getSearchText={getSearchText} />
+      <EshopHeader logo back getSearchText={getSearchText} searchBar />
 
       {inputValue === '' ? (
         <View style={styles.containerContent}>

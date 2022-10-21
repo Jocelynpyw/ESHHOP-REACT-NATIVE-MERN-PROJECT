@@ -1,13 +1,5 @@
-import {
-  Dimensions,
-  FlatList,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Dimensions, FlatList, StyleSheet, View} from 'react-native';
 import React from 'react';
-import {emptySearch} from '../../../utils/images';
 import ProductSearchItem from '../../../components/ProductSearchItem';
 import {colors} from '../../../utils/colors';
 import EsEmpty from '../../../components/EmptyThings';
