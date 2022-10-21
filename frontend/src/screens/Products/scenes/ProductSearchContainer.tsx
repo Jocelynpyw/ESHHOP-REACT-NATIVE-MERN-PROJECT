@@ -29,6 +29,7 @@ export default ProductSearchContainer;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'column',
     display: 'flex',
     padding: 10,

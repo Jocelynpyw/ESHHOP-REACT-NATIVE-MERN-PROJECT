@@ -3,11 +3,12 @@ import {
   ImageSourcePropType,
   StyleSheet,
   Text,
-  TouchableOpacity,
+  Pressable,
   View,
 } from 'react-native';
 import React, {FunctionComponent} from 'react';
 import {colors} from '../../utils/colors';
+import {useNavigation} from '@react-navigation/native';
 
 interface Props {
   item: {
@@ -21,8 +22,12 @@ interface Props {
 }
 
 const ProductSearchItem: FunctionComponent<Props> = (props: Props) => {
+  const navigation = useNavigation<any>();
   return (
-    <TouchableOpacity>
+    <Pressable
+      onPress={() => {
+        navigation.navigate('Product Details', {item: props.item});
+      }}>
       <View style={styles.container}>
         <View style={styles.imageContainner}>
           <Image
@@ -51,7 +56,7 @@ const ProductSearchItem: FunctionComponent<Props> = (props: Props) => {
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -69,13 +74,6 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     padding: 5,
     marginVertical: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
 
     elevation: 2,
   },

@@ -1,29 +1,85 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {colors} from '../../../utils/colors';
-import EshopHeader from '../../../components/header';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {useNavigation} from '@react-navigation/native';
 
 const ProductDetails = props => {
   const [item, setItem] = useState<any>({});
   useEffect(() => {
     setItem(props.route.params.item);
   }, []);
-
-  console.log('Les props sont : ', item);
-
-  //   const [item, setItem] = useState('');
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
-      <EshopHeader back />
+      {/* <EshopHeader back /> */}
       <View style={styles.imageContainer}>
+        <View style={styles.iconsContainer}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <FontAwesome5
+              name="arrow-left"
+              key={123}
+              size={20}
+              color={colors.app.red}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <FontAwesome5
+              name="heart"
+              key={123}
+              size={20}
+              color={colors.app.red}
+            />
+          </TouchableOpacity>
+        </View>
         <Image
+          style={styles.image}
           resizeMode="contain"
           source={{
             uri: 'https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg',
           }}
         />
       </View>
-      <Text>{props.route.params.item.name}</Text>
+      <View style={styles.textcontent}>
+        <View>
+          <View style={styles.detailsTopContainer}>
+            <Text style={styles.detailText}>{item.name}</Text>
+            <TouchableOpacity>
+              <FontAwesome5
+                name="share"
+                key={123}
+                size={20}
+                color={colors.app.red}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View>
+          <View style={styles.detailsTopContainer}>
+            <Text style={styles.detailText}>Details</Text>
+          </View>
+          <Text>{item.description}</Text>
+        </View>
+
+        <View style={styles.bottomInfosContainer}>
+          <View style={styles.priceContainer}>
+            <Text style={styles.price}> {item.price} XAF</Text>
+            <Text style={styles.totalPayable}>TOTAL PAYBLE</Text>
+          </View>
+          <TouchableOpacity>
+            <View style={styles.btnStyle}>
+              <Text style={styles.addToCartText}>Add To Cart</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
@@ -36,8 +92,74 @@ const styles = StyleSheet.create({
     backgroundColor: colors.app.white,
   },
   imageContainer: {
-    height: 300,
+    height: 210,
     width: '100%',
-    // backgroundColor: 'lime',
+    padding: 10,
+  },
+  image: {
+    height: 180,
+  },
+  textcontent: {
+    backgroundColor: '#EDF3F3',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    padding: 20,
+    flex: 1,
+    elevation: 2,
+  },
+  iconsContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  btnStyle: {
+    width: 150,
+    paddingVertical: 15,
+    backgroundColor: colors.app.red,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+  },
+  bottomInfosContainer: {
+    width: Dimensions.get('screen').width,
+    position: 'absolute',
+    bottom: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+  },
+  price: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: colors.text.black,
+  },
+  addToCartText: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: colors.text.white,
+  },
+  priceContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  totalPayable: {
+    color: '#BFBFBF',
+  },
+  detailText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginVertical: 10,
+    color: colors.text.black,
+  },
+  detailsTopContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
