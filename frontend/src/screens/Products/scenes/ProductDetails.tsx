@@ -73,7 +73,11 @@ const ProductDetails = props => {
             <Text style={styles.price}> {item.price} XAF</Text>
             <Text style={styles.totalPayable}>TOTAL PAYBLE</Text>
           </View>
-          {/* Toucheble view */}
+          <TouchableOpacity>
+            <View style={styles.btnStyle}>
+              <Text style={styles.addToCartText}>Add To Cart</Text>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
