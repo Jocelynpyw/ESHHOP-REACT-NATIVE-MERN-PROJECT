@@ -7,6 +7,7 @@ import ProductSearchContainer from './ProductSearchContainer';
 import SwiperComponent from '../../../components/Barner';
 import CategoryFilter from '../../Categories/Scenes/CategoryFilter';
 import EsEmpty from '../../../components/EmptyThings';
+import {useSelector} from 'react-redux';
 
 const data = require('../../../assets/data/products.json');
 const categorie = require('../../../assets/data/categories.json');
@@ -19,7 +20,9 @@ const ProductContainer = () => {
   const [active, setActive] = useState<Number>();
   const [categories, setCategories] = useState<String[]>([]);
   const [initialState, setInitialState] = useState<String[]>([]);
+  const cart = useSelector(state => state.counter);
   useEffect(() => {
+    console.log('Ce quei est contenu dans cart est ', cart);
     setProducts(data);
     setProductCtg(data);
     setProductFiltered(data);
