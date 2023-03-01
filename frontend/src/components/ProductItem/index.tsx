@@ -11,6 +11,8 @@ import {
 import React, {FunctionComponent} from 'react';
 import {colors} from '../../utils/colors';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {addItemToCart, addToCart} from '../../redux/slices/cartSlice';
 
 interface Props {
   item: {
@@ -26,6 +28,7 @@ interface Props {
 var {width} = Dimensions.get('window');
 
 const ProductCard: FunctionComponent<Props> = (props: Props) => {
+  const dispatch = useDispatch();
   const navigation = useNavigation<any>();
   return (
     <Pressable
@@ -54,7 +57,13 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
           <Text style={styles.price}>{props.item.price} XAF</Text>
           {props.item.countInStock > 0 ? (
             <View style={styles.viewButton}>
-              <Button title="Add" color={'green'} />
+              <Button
+                title="Add"
+                color={'green'}
+                onPress={() =>
+                  dispatch(addToCart({quantity: 1, item: props.item}))
+                }
+              />
             </View>
           ) : (
             <Text style={styles.unavailableText}>Currently Unavailable</Text>

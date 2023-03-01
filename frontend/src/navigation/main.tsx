@@ -4,6 +4,9 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import HomeNavigation from './HomeNavigation';
+import CartScreen from '../screens/Cart/scenes/CartScreen';
+import SettingsScreen from '../screens/Settings/scenes/SettingsScreen';
+import AdminScreen from '../screens/Admins/scenes/AdminScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,8 +45,9 @@ const Main = () => {
 
       <Tab.Screen
         name="Cart"
-        component={HomeNavigation}
+        component={CartScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({color}) => (
             <FontAwesome5
               name="shopping-cart"
@@ -57,8 +61,9 @@ const Main = () => {
 
       <Tab.Screen
         name="Admin"
-        component={HomeNavigation}
+        component={SettingsScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="cog" key={123} size={20} color={color} />
           ),
@@ -66,8 +71,9 @@ const Main = () => {
       />
       <Tab.Screen
         name="User"
-        component={HomeNavigation}
+        component={AdminScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="user" key={123} size={20} color={color} />
           ),

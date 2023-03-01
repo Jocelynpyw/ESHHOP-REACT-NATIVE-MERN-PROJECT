@@ -13,6 +13,8 @@ const data = require('../../../assets/data/products.json');
 const categorie = require('../../../assets/data/categories.json');
 
 const ProductContainer = () => {
+  // const data = useSelector(state => state.counter.value);
+
   const [products, setProducts] = useState<any[]>([]);
   const [productFiltered, setProductFiltered] = useState<any[]>([]);
   const [productCtg, setProductCtg] = useState<any[]>([]);
@@ -20,9 +22,8 @@ const ProductContainer = () => {
   const [active, setActive] = useState<Number>();
   const [categories, setCategories] = useState<String[]>([]);
   const [initialState, setInitialState] = useState<String[]>([]);
-  const cart = useSelector(state => state.counter);
   useEffect(() => {
-    console.log('Ce quei est contenu dans cart est ', cart);
+    // console.log('Ce quei est contenu dans cart est ', data);
     setProducts(data);
     setProductCtg(data);
     setProductFiltered(data);
