@@ -8,7 +8,7 @@ export const counterSlice = createSlice({
       return [...state, action.payload];
     },
     deleteToCart: (state, action) => {
-      return state.filter(item => item.id !== action.payload);
+      return state.filter(item => item?.item._id !== action.payload);
     },
     clearCart: (state, action) => {
       return [];
@@ -16,6 +16,6 @@ export const counterSlice = createSlice({
   },
 });
 
-export const {addToCart, deleteToCart} = counterSlice.actions;
+export const {addToCart, deleteToCart, clearCart} = counterSlice.actions;
 
 export default counterSlice.reducer;

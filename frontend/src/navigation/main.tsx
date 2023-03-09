@@ -1,6 +1,9 @@
 // In App.js in a new project
 
 import * as React from 'react';
+import {View, Text} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import HomeNavigation from './HomeNavigation';
@@ -11,6 +14,9 @@ import AdminScreen from '../screens/Admins/scenes/AdminScreen';
 const Tab = createBottomTabNavigator();
 
 const Main = () => {
+  const cart: any[] = useSelector(state => state.cart);
+  console.log('La taille de mon panier est : ', cart.length);
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -49,12 +55,15 @@ const Main = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => (
-            <FontAwesome5
-              name="shopping-cart"
-              key={123}
-              size={20}
-              color={color}
-            />
+            <View>
+              <FontAwesome5
+                name="shopping-cart"
+                key={123}
+                size={20}
+                color={color}
+              />
+              <Text>{cart.length}</Text>
+            </View>
           ),
         }}
       />

@@ -1,8 +1,6 @@
 [
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
-    },
+    "_id": "2fede332wdde23443wdeer441",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
@@ -18,9 +16,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wderr445"
-    },
+    "_id": "2fede332wdde23443wderr445",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "IKEA",
     "price": 350,
@@ -36,9 +32,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
-    },
+    "_id": "2fede332wdde23443wdeer442",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "Canon t-shirt",
     "price": 450,
@@ -54,9 +48,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
-    },
+    "_id": "2fede332wdde23443wdeer446",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
@@ -72,9 +64,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer442"
-    },
+    "_id": "2fede332wdde23443wdeer442",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
@@ -90,9 +80,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
-    },
+    "_id": "2fede332wdde23443wdeer435",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
@@ -108,9 +96,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer449"
-    },
+    "_id": "2fede332wdde23443wdeer449",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps5",
     "price": 250,
@@ -126,9 +112,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
-    },
+    "_id": "2fede332wdde23243wdeer445",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
@@ -144,9 +128,7 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "2fede332wdde23443wdeer445"
-    },
+    "_id": "2fede332wdde23443wdeer445",
     "image": "https://www.je-buy.com/uploads/articles/2022-05-09_08-57-07-DEM-1.jpg",
     "brand": "ps3",
     "price": 250,
