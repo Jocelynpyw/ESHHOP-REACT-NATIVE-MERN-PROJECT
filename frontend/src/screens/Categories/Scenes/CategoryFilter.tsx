@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     minWidth: 100,
     height: 40,
     padding: 5,
-    backgroundColor: '#d0111140',
+    backgroundColor: '#0a879180',
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   active: {
-    backgroundColor: colors.app.red,
+    backgroundColor: colors.app.DEFAULT_GREEN,
   },
   inactive: {
     // backgroundColor: 'red',

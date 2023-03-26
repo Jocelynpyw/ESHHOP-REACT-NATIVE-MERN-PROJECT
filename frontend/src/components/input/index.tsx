@@ -1,6 +1,15 @@
-import {Pressable, StyleSheet, TextInput, View, ViewStyle} from 'react-native';
+import {
+  Pressable,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  View,
+  ViewStyle,
+} from 'react-native';
 import React, {FunctionComponent} from 'react';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {colors} from '../../utils/colors';
 
 interface Iinput {
   value?: string;
@@ -21,7 +30,7 @@ const EsInput: FunctionComponent<Iinput> = (props: Iinput) => {
       <View style={[styles.defaultInputContainer, props.stylesInput]}>
         {props.icon && (
           <Pressable>
-            <FontAwesome5
+            <Ionicons
               name={props.iconName}
               color="grey"
               size={20}
@@ -36,6 +45,14 @@ const EsInput: FunctionComponent<Iinput> = (props: Iinput) => {
           onChangeText={text => onChangeText(name, text)}
           // onChangeText={text => onChangeText(text)}
         />
+        <TouchableOpacity>
+          <Feather
+            name="sliders"
+            color={colors.app.DEFAULT_YELLOW}
+            size={20}
+            style={styles.iconStyle}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -61,7 +78,7 @@ const styles = StyleSheet.create({
   },
   defaultInputContainer: {
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 8,
     flexDirection: 'row',
     width: '100%',
     height: 35,

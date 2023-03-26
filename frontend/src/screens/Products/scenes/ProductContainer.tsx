@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, StatusBar, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import ProductCard from '../../../components/ProductItem';
 import {colors} from '../../../utils/colors';
@@ -65,7 +65,13 @@ const ProductContainer = () => {
 
   return (
     <View style={styles.container}>
-      <EshopHeader logo back getSearchText={getSearchText} searchBar />
+      {/* <StatusBar
+        barStyle="light-content"
+        backgroundColor={colors.app.DEFAULT_GREEN}
+        translucent
+      /> */}
+
+      <EshopHeader logo getSearchText={getSearchText} searchBar home />
 
       {inputValue === '' ? (
         <View style={styles.containerContent}>

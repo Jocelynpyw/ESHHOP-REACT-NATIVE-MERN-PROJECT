@@ -10,8 +10,11 @@ import React, {useEffect, useState} from 'react';
 import {colors} from '../../../utils/colors';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {addToCart} from '../../../redux/slices/cartSlice';
 
 const ProductDetails = props => {
+  const dispatch = useDispatch();
   const [item, setItem] = useState<any>({});
   useEffect(() => {
     setItem(props.route.params.item);
@@ -73,7 +76,8 @@ const ProductDetails = props => {
             <Text style={styles.price}> {item.price} XAF</Text>
             <Text style={styles.totalPayable}>TOTAL PAYBLE</Text>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => dispatch(addToCart(props.route.params))}>
             <View style={styles.btnStyle}>
               <Text style={styles.addToCartText}>Add To Cart</Text>
             </View>

@@ -13,9 +13,12 @@ import {useDispatch, useSelector} from 'react-redux';
 import {colors} from '../../../utils/colors';
 import CardItem from '../../../components/cardItem';
 import {clearCart} from '../../../redux/slices/cartSlice';
+import EsEmpty from '../../../components/EmptyThings';
+import {useNavigation} from '@react-navigation/native';
 
 const CartScreen = () => {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
   const cart = useSelector(state => state.cart);
   var total = 0;
   cart.forEach(element => {
@@ -26,22 +29,31 @@ const CartScreen = () => {
     <View style={styles.containerj}>
       <EshopHeader back />
       <SafeAreaView style={styles.container}>
-        <FlatList
-          data={cart}
-          renderItem={({item}) => <CardItem cardItem={item} />}
-          keyExtractor={item => item.item._id}
-        />
+        {cart.length == 0 ? (
+          <EsEmpty />
+        ) : (
+          <FlatList
+            data={cart}
+            renderItem={({item}) => <CardItem cardItem={item} />}
+            keyExtractor={item => item.item._id}
+          />
+        )}
       </SafeAreaView>
       <View style={styles.bottomBox}>
         <View>
           <Text> TOTAL: {total} XAF</Text>
         </View>
-        <View>
+        <View style={styles.clearandcheck}>
           <TouchableOpacity
             onPress={() => {
               dispatch(clearCart());
             }}>
-            <Text style={{fontWeight: 'bold', fontSize: 20}}>CLEAR</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 18}}>CLEAR</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('checkout')}>
+            <Text style={{marginLeft: 20, fontWeight: 'bold', fontSize: 18}}>
+              CHECKOUT
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -73,13 +85,18 @@ const styles = StyleSheet.create({
   containerItem: {
     height: 300,
     width: 400,
-    backgroundColor: 'red',
+    backgroundColor: colors.app.DEFAULT_GREEN,
   },
   bottomBox: {
     padding: 10,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  clearandcheck: {
+    display: 'flex',
+    flexDirection: 'row',
     alignItems: 'center',
   },
 });

@@ -7,9 +7,11 @@ import {useDispatch, useSelector} from 'react-redux';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import HomeNavigation from './HomeNavigation';
+import CartNavigation from './CartNavigation';
 import CartScreen from '../screens/Cart/scenes/CartScreen';
 import SettingsScreen from '../screens/Settings/scenes/SettingsScreen';
 import AdminScreen from '../screens/Admins/scenes/AdminScreen';
+import {colors} from '../utils/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +35,7 @@ const Main = () => {
           }
           return <FontAwesome5 name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: 'red',
+        tabBarActiveTintColor: colors.app.DEFAULT_GREEN,
         tabBarInactiveTintColor: 'gray',
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
@@ -51,7 +53,7 @@ const Main = () => {
 
       <Tab.Screen
         name="Cart"
-        component={CartScreen}
+        component={CartNavigation}
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => (

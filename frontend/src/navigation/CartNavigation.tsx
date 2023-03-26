@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ProductContainer from '../screens/Products/scenes/ProductContainer';
-import ProductDetails from '../screens/Products/scenes/ProductDetails';
 import CheckoutScreen from '../screens/Checkout/scenes/CheckoutScreen';
+import CartScreen from '../screens/Cart/scenes/CartScreen';
+import CheckoutNavigation from './CheckoutTabNavivator';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,15 +10,15 @@ function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="home "
-        component={ProductContainer}
+        name="cart"
+        component={CartScreen}
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="Product Details"
-        component={ProductDetails}
+        name="checkout"
+        component={CheckoutNavigation}
         options={{
           headerShown: false,
         }}

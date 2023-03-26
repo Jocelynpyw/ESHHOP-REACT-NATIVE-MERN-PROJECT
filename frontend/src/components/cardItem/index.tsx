@@ -15,7 +15,7 @@ var {width} = Dimensions.get('window');
 
 const CardItem = ({cardItem}: any) => {
   const dispatch = useDispatch();
-  var total = 0;
+ 
   return (
     <View style={styles.container}>
       <View style={styles.containerImage}>
