@@ -37,6 +37,7 @@ const EshopHeader: FunctionComponent<Props> = (props: Props) => {
           <Image source={logo} resizeMode="contain" style={styles.imageStyle} />
         )} */}
       </View>
+
       {props.home && (
         <View style={styles.headerContainer}>
           <View style={styles.locationContainer}>
@@ -119,22 +120,16 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     width: '100%',
-
-    // alignContent: 'center',
-    // alignSelf: 'center',
     marginBottom: 5,
   },
   locationContainer: {
     display: 'flex',
-    backgroundColor: 'red',
-    // width: '100%',
+    // backgroundColor: 'red',
     justifyContent: 'space-between',
     alignContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 10,
-
-    marginHorizontal: 20,
   },
   locationText: {
     color: colors.app.DEFAULT_WHITE,
