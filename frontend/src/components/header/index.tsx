@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     minHeight: 50,
     padding: 15,
     backgroundColor: colors.app.DEFAULT_GREEN,
+    marginTop: 20,
   },
   imageStyle: {
     height: 45,

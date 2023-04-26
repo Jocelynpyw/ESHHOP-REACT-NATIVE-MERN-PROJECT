@@ -10,7 +10,7 @@ import HomeNavigation from './HomeNavigation';
 import CartNavigation from './CartNavigation';
 import CartScreen from '../screens/Cart/scenes/CartScreen';
 import SettingsScreen from '../screens/Settings/scenes/SettingsScreen';
-import AdminScreen from '../screens/Admins/scenes/AdminScreen';
+import ProfileScreen from '../screens/Admins/scenes/Profile';
 import {colors} from '../utils/colors';
 
 const Tab = createBottomTabNavigator();
@@ -82,7 +82,7 @@ const Main = () => {
       />
       <Tab.Screen
         name="User"
-        component={AdminScreen}
+        component={ProfileScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({color}) => (

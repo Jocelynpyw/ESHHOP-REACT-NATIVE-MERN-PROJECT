@@ -140,7 +140,9 @@ const CartScreen = () => {
           <Text style={styles.emptyCartSubText}>
             Go ahead and order some tasty food
           </Text>
-          <TouchableOpacity style={styles.addButtonEmpty}>
+          <TouchableOpacity
+            style={styles.addButtonEmpty}
+            onPress={() => navigation.navigate('Home')}>
             <AntDesign name="plus" color={colors.app.DEFAULT_WHITE} size={20} />
             <Text style={styles.addButtonEmptyText}>Add Food</Text>
           </TouchableOpacity>
