@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import CheckoutScreen from '../screens/Checkout/scenes/CheckoutScreen';
 import CartScreen from '../screens/Cart/scenes/CartScreen';
 import CheckoutNavigation from './CheckoutTabNavivator';
+import AddpaymentScreen from '../screens/Checkout/scenes/addpaymentScreen';
+import ShippingScreen from '../screens/Checkout/scenes/ShippingScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,20 @@ function MyStack() {
       <Stack.Screen
         name="checkout"
         component={CheckoutNavigation}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="addPayment"
+        component={AddpaymentScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="shippingAdress"
+        component={ShippingScreen}
         options={{
           headerShown: false,
         }}

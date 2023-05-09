@@ -10,6 +10,7 @@ import {colors} from '../../utils/colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import Separator from '../Separator';
+import Display from '../../utils/Display';
 
 interface Props {
   back?: boolean;
@@ -49,10 +50,17 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    // fontFamily:'p'
+    // fontFamily: Fonts.POPPINS_MEDIUM,
     lineHeight: 20 * 1.4,
-    width: '80%',
+    width: Display.setWidth(80),
     textAlign: 'center',
-    color: colors.app.DEFAULT_BLACK,
   },
+  // headerTitle: {
+  //   fontSize: 20,
+  //   // fontFamily:'p'
+  //   lineHeight: 20 * 1.4,
+  //   width: '80%',
+  //   textAlign: 'center',
+  //   color: colors.app.DEFAULT_BLACK,
+  // },
 });

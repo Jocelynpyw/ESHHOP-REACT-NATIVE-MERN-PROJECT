@@ -29,9 +29,6 @@ const CartScreen = () => {
     total += element.item.price;
   });
 
-  // console.log('les gars la sont : ', cart);
-
-  // const cart = useSelector(state => state?.cartState?.cart);
   return (
     <View style={styles.container}>
       <StatusBar
@@ -55,18 +52,6 @@ const CartScreen = () => {
             <View style={styles.foodList}>
               {cart?.map(item => (
                 <CardItem cardItem={item} keyExtractor={item.item._id} />
-                // <FlatList
-                //   data={cart}
-                //   renderItem={({item}) => <CardItem cardItem={item} />}
-                //   keyExtractor={item => item.item._id}
-                // />
-                // <FoodCard
-                //   {...item?.food}
-                //   key={item?.food?.id}
-                //   navigate={() =>
-                //     navigation.navigate('Food', {foodId: item?.id})
-                //   }
-                // />
               ))}
             </View>
             <View style={styles.promoCodeContainer}>
@@ -113,7 +98,11 @@ const CartScreen = () => {
                 XAF {cart?.metaData?.grandTotal?.toFixed(2)}
               </Text>
             </View>
-            <TouchableOpacity style={styles.checkoutButton}>
+            <TouchableOpacity
+              style={styles.checkoutButton}
+              onPress={() => {
+                navigation.navigate('addPayment');
+              }}>
               <View style={styles.rowAndCenter}>
                 <Ionicons
                   name="cart-outline"

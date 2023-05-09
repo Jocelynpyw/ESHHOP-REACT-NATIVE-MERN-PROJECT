@@ -2,9 +2,9 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import {View, Text} from 'react-native';
 
 import EshopHeader from '../components/header';
-import ConfirmScreen from '../screens/Cart/scenes/ConfirmScreen';
+import ConfirmScreen from '../screens/Checkout/scenes/ConfirmScreen';
 import PaymentScreen from '../screens/Cart/scenes/PaymentScreen';
-import ShippingScreen from '../screens/Cart/scenes/ShippingScreen';
+import ShippingScreen from '../screens/Checkout/scenes/ShippingScreen';
 
 const Tab = createMaterialTopTabNavigator();
 
