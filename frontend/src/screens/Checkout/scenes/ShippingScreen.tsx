@@ -5,6 +5,8 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import React, {useState} from 'react';
 import {colors} from '../../../utils/colors';
@@ -19,10 +21,10 @@ const ShippingScreen = () => {
   const [shippingAdress2, setShippingAdress2] = useState<String>('');
   const [zipCode, setZipCode] = useState<String>('');
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
       <SimpleHeader back title="Add A Shipping Adress" />
       {/*  Input Container Start */}
-      <ScrollView>
+      <ScrollView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.containerContent}>
           <Text>Phone</Text>
           <View style={styles.inputContainer}>
@@ -108,7 +110,7 @@ const ShippingScreen = () => {
         }>
         <Text style={styles.checkoutText}>Next</Text>
       </TouchableOpacity>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
