@@ -13,8 +13,6 @@ const data = require('../../../assets/data/products.json');
 const categorie = require('../../../assets/data/categories.json');
 
 const ProductContainer = () => {
-  console.log('my baby is TNEI ');
-
   // const data = useSelector(state => state.counter.value);
 
   const [products, setProducts] = useState<any[]>([]);

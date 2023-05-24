@@ -5,6 +5,7 @@ import {
   Dimensions,
   Image,
   TouchableOpacity,
+  StatusBar,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {colors} from '../../../utils/colors';
@@ -23,6 +24,11 @@ const ProductDetails = props => {
   return (
     <View style={styles.container}>
       {/* <EshopHeader back /> */}
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={colors.app.DEFAULT_WHITE}
+        // translucent
+      />
       <View style={styles.imageContainer}>
         <View style={styles.iconsContainer}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -94,11 +100,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.app.white,
+    // height: '100%',
   },
   imageContainer: {
     height: 210,
     width: '100%',
     padding: 10,
+    marginTop: 20,
   },
   image: {
     height: 180,
@@ -115,6 +123,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    // marginTop: 10,
   },
   btnStyle: {
     width: 150,

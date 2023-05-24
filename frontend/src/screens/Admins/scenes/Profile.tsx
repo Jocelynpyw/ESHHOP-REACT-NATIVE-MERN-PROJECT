@@ -93,7 +93,6 @@ const ProfileScreen = ({navigation}) => {
             <Text style={styles.menuText}>Delivery Addresses</Text>
           </TouchableOpacity>
         </View>
-
         <View style={styles.mainContainer}>
           <Text style={styles.sectionHeaderText}>My Account</Text>
           <TouchableOpacity style={styles.sectionContainer} activeOpacity={0.8}>
